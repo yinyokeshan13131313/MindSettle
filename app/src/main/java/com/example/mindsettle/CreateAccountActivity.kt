@@ -6,57 +6,55 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.Response.Listener
 import com.android.volley.toolbox.JsonObjectRequest
-import com.example.mindsettle.Adapter.ListPersonAdapter
-import com.example.mindsettle.DBHelper.DBHelper
-import com.example.mindsettle.Model.Person
 import kotlinx.android.synthetic.main.activity_create.*
 import org.json.JSONArray
 import org.json.JSONObject
 
 class CreateAccountActivity : AppCompatActivity() {
 
-    internal lateinit var db: DBHelper
-    internal var lstPersons: List<Person> = ArrayList<Person>()
+    //internal lateinit var db: DBHelper
+    //internal var lstPersons: List<Person> = ArrayList<Person>()
     lateinit var userList: ArrayList<User>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create)
 
-        userList = ArrayList()
-        db = DBHelper(this)
+        //userList = ArrayList()
+        ////db = DBHelper(this)
 
-        refreshData()
+        //refreshData()
 
         buttonSignUp.setOnClickListener {
             //showError()
-            val person = Person(
-                editTextNickname.text.toString(),
-                editTextEmail.text.toString(),
-                editTextPass.text.toString(),
-                Integer.parseInt(editTextBirthYear.text.toString()),
-                editTextCountry.text.toString()
-            )
-            db.addPerson(person)
-            refreshData()
+            //val person = Person(
+            //    editTextNickname.text.toString(),
+            //    editTextEmail.text.toString(),
+            //    editTextPass.text.toString(),
+            //    Integer.parseInt(editTextBirthYear.text.toString()),
+            //    editTextCountry.text.toString()
+            //)
+            //db.addPerson(person)
+            //refreshData()
         }
 
     }
 
-    private fun refreshData() {
-        lstPersons = db.allPerson
-        val adapter = ListPersonAdapter(
-            this@CreateAccountActivity,
-            lstPersons,
-            editTextNickname,
-            editTextEmail,
-            editTextPass,
-            editTextBirthYear,
-            editTextCountry
-        )
-        list_persons.adapter = adapter
-    }
+    //private fun refreshData() {
+     //   lstPersons = db.allPerson
+     //   val adapter = ListPersonAdapter(
+     //       this@CreateAccountActivity,
+     //       lstPersons,
+     //       editTextNickname,
+      //      editTextEmail,
+     //       editTextPass,
+     //       editTextBirthYear,
+   //         editTextCountry
+    //    )
+      //  list_persons.adapter = adapter
+    //}
 
     private fun showError() {
         if (editTextEmail.text.toString().isEmpty()) {
@@ -66,7 +64,7 @@ class CreateAccountActivity : AppCompatActivity() {
         }
 
         if (editTextPass.length() < 4) {
-            textInputLayoutPass.error = "TPassword must be at least 4 characters long."
+            textInputLayoutPass.error = "TPassword must be at least 6 characters long."
         } else {
             textInputLayoutPass.error = null
         }
@@ -77,10 +75,10 @@ class CreateAccountActivity : AppCompatActivity() {
             textInputLayoutConfirmPass.error = null
         }
 
-        if (editTextNickname.text.toString().isEmpty()) {
-            textInputLayoutNickname.error = "Please enter a valid nickname."
+        if (editTextUsername.text.toString().isEmpty()) {
+            textInputLayoutUsername.error = "Please enter a valid username."
         } else {
-            textInputLayoutNickname.error = null
+            textInputLayoutUsername.error = null
         }
 
         if (editTextBirthYear.length() != 4) {
@@ -99,10 +97,10 @@ class CreateAccountActivity : AppCompatActivity() {
 
     private fun createUser(user: User) {
         val url = getString(R.string.url_server) + getString(R.string.url_user_create) + "?name=" + user.username +
-                    "&email=" + user.email + "&password=" + user.password + "&birthyear=" + user.birthyear + "&country=" + user.country
+                "&email=" + user.email + "&password=" + user.password + "&birthyear=" + user.birthyear + "&country=" + user.country
 
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,Response.Listener { response ->
-                // Process the JSON
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+            Response.Listener {response ->
                 try {
                     if (response != null) {
                         val success: String = response.get("success").toString()
@@ -123,9 +121,9 @@ class CreateAccountActivity : AppCompatActivity() {
                 } catch (e: Exception) {
                     Log.d("Main", "Response: %s".format(e.message.toString()))
                 }
-            }
-                    Response.ErrorListener { error ->
-                Log.d("Main", "Response: %s".format(error.message.toString()))
+            },
+            Response.ErrorListener { response ->
+                Log.d("Main", "Response: %s".format(response.message.toString()))
             }
         )
 
@@ -145,7 +143,7 @@ class CreateAccountActivity : AppCompatActivity() {
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
-            Response.Listener { response ->
+            Listener { response ->
                 // Process the JSON
                 try {
                     if (response != null) {
@@ -191,8 +189,4 @@ class CreateAccountActivity : AppCompatActivity() {
     companion object {
         const val TAG = "com.example.mindsettle"
     }
-}
-
-
-
 }

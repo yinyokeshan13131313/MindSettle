@@ -6,7 +6,7 @@
     <string name="email">Email* </string>
     <string name="password">Password* </string>
     <string name="confirmPass">Confirm Password* </string>
-    <string name="nickname">Nickname* </string>
+    <string name="username">Username* </string>
     <string name="birthYear">Birth Year* </string>
     <string name="country">Country </string>
     <string name="province">Province/State </string>
@@ -14,5 +14,6 @@
     <string name="url_server">https://loxodromic-tactic.000webhostapp.com/api/</string>
     <string name="url_user_read">user/read.php</string>
     <string name="url_user_create">user/create.php</string>
+    <string name="url_user_read_one">user/read_one.php</string>
     
 </resources>

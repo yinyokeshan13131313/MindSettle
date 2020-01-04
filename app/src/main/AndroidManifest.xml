@@ -17,6 +17,14 @@
             android:label="@string/signIn"
             android:parentActivityName=".MainActivity"
             ></activity>
+        <activity android:name=".HomeActivity"
+            android:label="Home"
+            android:parentActivityName=".MainActivity"
+            ></activity>
+        <activity android:name=".TestActivity"
+            android:label="Test"
+            android:parentActivityName=".MainActivity"
+            ></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
