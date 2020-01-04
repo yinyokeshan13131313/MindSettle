@@ -3,13 +3,20 @@ package com.example.mindsettle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import com.example.mindsettle.Adapter.ListPersonAdapter
+import com.example.mindsettle.DBHelper.DBHelper
+import com.example.mindsettle.Model.Person
+import kotlinx.android.synthetic.main.activity_create.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         buttonCreateAcc.setOnClickListener {
             createAccount()
@@ -19,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             signIn()
         }
     }
+
+
 
     private fun createAccount(){
         //Explicit Intent

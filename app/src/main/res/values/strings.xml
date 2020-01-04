@@ -11,4 +11,8 @@
     <string name="country">Country </string>
     <string name="province">Province/State </string>
     <string name="signUp">Sign Up</string>
+    <string name="url_server">https://loxodromic-tactic.000webhostapp.com/api/</string>
+    <string name="url_user_read">user/read.php</string>
+    <string name="url_user_create">user/create.php</string>
+    
 </resources>
