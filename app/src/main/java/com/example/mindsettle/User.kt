@@ -9,4 +9,6 @@ data class User(@PrimaryKey val username: String,
                 val password: String,
                 val birthyear: Int,
                 val country: String) {
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.mindsettle
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,8 @@ class SignInActivity: AppCompatActivity()  {
     }
 
     private fun JSONProccess1(username:String,password:String) {
-        val loginURL = getString(R.string.url_server) + getString(R.string.url_user_read) //+ "?username=" + username + "&password=" + password
+        var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+        val loginURL = getString(R.string.url_server) + getString(R.string.url_user_read_one_sign) + "?username=" + username + "&password=" + password
 
         // output = (TextView) findViewById(R.id.jsonData);
         val jsonObjectRequest = JsonObjectRequest(
@@ -37,6 +39,13 @@ class SignInActivity: AppCompatActivity()  {
                         if(jsonResponse != null){
                             Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, HomeActivity::class.java)
+                            intent.putExtra("username", username)
+                            finish()
+
+                            var editor = token.edit()
+                            editor.putString("loginusername", username)
+                            editor.commit()
+
                             startActivity(intent)
                         }
                     }

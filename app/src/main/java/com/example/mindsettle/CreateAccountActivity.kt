@@ -1,5 +1,6 @@
 package com.example.mindsettle
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -11,92 +12,121 @@ import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_create.*
 import org.json.JSONArray
 import org.json.JSONObject
+import android.text.TextUtils
+import org.json.JSONException
+
 
 class CreateAccountActivity : AppCompatActivity() {
 
-    //internal lateinit var db: DBHelper
-    //internal var lstPersons: List<Person> = ArrayList<Person>()
-    lateinit var userList: ArrayList<User>
+    //lateinit var userList: ArrayList<User>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create)
 
-        //userList = ArrayList()
-        ////db = DBHelper(this)
-
-        //refreshData()
-
         buttonSignUp.setOnClickListener {
-            //showError()
-            //val person = Person(
-            //    editTextNickname.text.toString(),
-            //    editTextEmail.text.toString(),
-            //    editTextPass.text.toString(),
-            //    Integer.parseInt(editTextBirthYear.text.toString()),
-            //    editTextCountry.text.toString()
-            //)
-            //db.addPerson(person)
-            //refreshData()
+            var checkValid = showError()
+            if(checkValid == 0){
+                createUser(User(editTextUsername.text.toString(),editTextEmail.text.toString(),editTextPass.text.toString(),editTextBirthYear.text.toString().toInt(),editTextCountry.text.toString()))
+            }
+           // createUser(User(editTextUsername.text.toString(),editTextEmail.text.toString(),editTextPass.text.toString(),editTextBirthYear.text.toString().toInt(),editTextCountry.text.toString()))
+
         }
 
     }
 
-    //private fun refreshData() {
-     //   lstPersons = db.allPerson
-     //   val adapter = ListPersonAdapter(
-     //       this@CreateAccountActivity,
-     //       lstPersons,
-     //       editTextNickname,
-      //      editTextEmail,
-     //       editTextPass,
-     //       editTextBirthYear,
-   //         editTextCountry
-    //    )
-      //  list_persons.adapter = adapter
-    //}
 
-    private fun showError() {
+    private fun showError(): Int {
+        var errorNum = 0;
         if (editTextEmail.text.toString().isEmpty()) {
+            textInputLayoutEmail.error = "Email cannot be empty."
+            errorNum++;
+        } else if(!isValidEmail(editTextEmail.text.toString())){
             textInputLayoutEmail.error = "Please enter a valid email."
         } else {
             textInputLayoutEmail.error = null
         }
 
-        if (editTextPass.length() < 4) {
-            textInputLayoutPass.error = "TPassword must be at least 6 characters long."
+        if (editTextPass.length() < 5) {
+            textInputLayoutPass.error = "Password must be at least 6 characters long."
+            errorNum++;
         } else {
             textInputLayoutPass.error = null
         }
 
         if (editTextConfirmPass.text.toString() != editTextPass.text.toString()) {
             textInputLayoutConfirmPass.error = "Password don't match. "
+            errorNum++;
         } else {
             textInputLayoutConfirmPass.error = null
         }
 
         if (editTextUsername.text.toString().isEmpty()) {
-            textInputLayoutUsername.error = "Please enter a valid username."
+            textInputLayoutUsername.error = "Username cannot be empty."
+            errorNum++;
+        } else if(checkDuplicateUsername(editTextUsername.text.toString())){
+            errorNum++;
         } else {
             textInputLayoutUsername.error = null
         }
 
-        if (editTextBirthYear.length() != 4) {
+        if (editTextBirthYear.length() != 4 || editTextBirthYear.text.toString().toInt() > 2020) {
             textInputLayoutBirthYear.error = "Please enter a valid birth year."
+            errorNum++;
         } else {
             textInputLayoutBirthYear.error = null
         }
 
         if (editTextCountry.text.toString().isEmpty()) {
-            textInputLayoutCountry.error = "Please enter a valid country."
+            textInputLayoutCountry.error = "Country cannot be empty."
+            errorNum++;
         } else {
             textInputLayoutCountry.error = null
         }
 
+        return errorNum;
+    }
+
+    private fun isValidEmail(target: CharSequence): Boolean {
+        return if (TextUtils.isEmpty(target)) {
+            false
+        } else {
+            android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches()
+        }
+    }
+
+    private fun checkDuplicateUsername(username:String): Boolean{
+        val loginURL = getString(R.string.url_server) + getString(R.string.url_user_read_one) + "?username=" + username
+        var duplicateName = false
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, loginURL, null,
+            Response.Listener { response ->
+                try {
+                    if (response != null) {
+                        val strResponse = response.toString()
+                        val jsonResponse  = JSONObject(strResponse)
+
+                        if(jsonResponse != null){
+                            textInputLayoutUsername.error = "The username already exist. Please try another one."
+                            duplicateName = true
+                        }
+                    }
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+            },
+            Response.ErrorListener {
+                if(!duplicateName){
+                    textInputLayoutUsername.error = null
+                }
+            }
+        )
+        // Access the RequestQueue through your singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+        return duplicateName
     }
 
     private fun createUser(user: User) {
-        val url = getString(R.string.url_server) + getString(R.string.url_user_create) + "?name=" + user.username +
+        val url = getString(R.string.url_server) + getString(R.string.url_user_create) + "?username=" + user.username +
                 "&email=" + user.email + "&password=" + user.password + "&birthyear=" + user.birthyear + "&country=" + user.country
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
@@ -106,15 +136,15 @@ class CreateAccountActivity : AppCompatActivity() {
                         val success: String = response.get("success").toString()
 
                         if (success.equals("1")) {
-                            Toast.makeText(applicationContext, "Record saved", Toast.LENGTH_LONG)
-                                .show()
+                            Toast.makeText(applicationContext, "Record saved", Toast.LENGTH_LONG).show()
                             //Add record to user list
-                            userList.add(user)
+                            //userList.add(user)
+                            //Explicit Intent
+                            val intent = Intent(this, SignInActivity::class.java)
+                            //start the second activity. With no return value
+                            startActivity(intent)
                         } else {
-                            Toast.makeText(
-                                applicationContext,
-                                "Record not saved",
-                                Toast.LENGTH_LONG
+                            Toast.makeText(applicationContext,"Record not saved",Toast.LENGTH_LONG
                             ).show()
                         }
                     }
@@ -139,7 +169,7 @@ class CreateAccountActivity : AppCompatActivity() {
         //Display progress bar
 
         //Delete all user records
-        userList.clear()
+        //userList.clear()
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -163,7 +193,7 @@ class CreateAccountActivity : AppCompatActivity() {
                                 jsonUser.getString("country")
                             )
 
-                            userList.add(user)
+                            //userList.add(user)
                         }
                         Toast.makeText(
                             applicationContext,
