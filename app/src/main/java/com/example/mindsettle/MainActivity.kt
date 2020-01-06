@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun signIn(){
         //Explicit Intent
-        val intent = Intent (this, SignInActivity::class.java)
+        val intent = Intent (this, Main2BottomActivity::class.java)
 
         //start the second activity with no return value
         startActivity(intent)

@@ -21,6 +21,11 @@ class SignInActivity: AppCompatActivity()  {
         buttonSignHome.setOnClickListener {
             JSONProccess1(editTextUsername.text.toString(), editTextPass.text.toString())
         }
+
+        textViewForgot.setOnClickListener {
+            val intent = Intent(this, Main2BottomActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun JSONProccess1(username:String,password:String) {
@@ -38,7 +43,7 @@ class SignInActivity: AppCompatActivity()  {
 
                         if(jsonResponse != null){
                             Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, HomeActivity::class.java)
+                            val intent = Intent(this, TestActivity::class.java)
                             intent.putExtra("username", username)
                             finish()
 
