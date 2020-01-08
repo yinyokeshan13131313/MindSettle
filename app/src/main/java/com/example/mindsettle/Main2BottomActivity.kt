@@ -45,8 +45,8 @@ class Main2BottomActivity : AppCompatActivity() {
     }
 
     private fun replaceFragment(fragment: Fragment){
-        val fragmenrTransaction = supportFragmentManager.beginTransaction()
-        fragmenrTransaction.replace(R.id.fragmentContainer, fragment)
-        fragmenrTransaction.commit()
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+        fragmentTransaction.commit()
     }
 }

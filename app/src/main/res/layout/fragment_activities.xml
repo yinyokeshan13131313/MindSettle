@@ -1,16 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivitiesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="24sp"
-        android:textColor="@color/colorAccent"
-        android:text="Activites" />
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Activity"
+            android:textSize="25dp"></TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TableLayout
+        android:layout_width="396dp"
+        android:layout_height="489dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="47dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:text="Select an activity:"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="111dp"
+                android:layout_height="109dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:src="@drawable/breath" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="111dp"
+                android:layout_height="109dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:src="@drawable/thinking" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/take"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/shift"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewGratitude"
+                android:layout_width="111dp"
+                android:layout_height="109dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:src="@drawable/gratitude" />
+
+            <ImageView
+                android:id="@+id/imageViewStep"
+                android:layout_width="111dp"
+                android:layout_height="109dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:src="@drawable/step" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/TextViewGratitude"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/gratitude"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TextViewStep"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/takeasmallstep"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="111dp"
+                android:layout_height="109dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:padding="10dp"
+                android:src="@drawable/help" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/gethelp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
 
 </FrameLayout>

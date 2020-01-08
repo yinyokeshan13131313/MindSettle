@@ -13,6 +13,8 @@ class HomeActivity : AppCompatActivity()  {
 
         var token = getSharedPreferences("username", Context.MODE_PRIVATE)
         textViewUsernameTest.text = token.getString("loginusername", "")
+        var username = token.getString("loginusername", "")
+
 
         val testingSession = intent.getStringExtra("username")
         textViewTestSession.text =testingSession

@@ -26,7 +26,6 @@ class GoalsFragment : Fragment() {
         val activity = activity as Main2BottomActivity
 
         val toolbar: androidx.appcompat.widget.Toolbar = view.findViewById(R.id.toolbar)
-        //these lines set the toolbar title
         activity.setSupportActionBar(toolbar)
         setHasOptionsMenu(true)
         //activity.supportActionBar?.setHomeAsUpIndicator(R.drawable.add_icon)

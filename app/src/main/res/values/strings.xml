@@ -29,4 +29,46 @@
     <!--ys-->
     <string name="learn_more">Learn More</string>
 
+    <!--jh-->
+
+    <string name="Upload">Upload</string>
+    <string name="awful">AWFUL</string>
+    <string name="bad">BAD</string>
+    <string name="ok">OK</string>
+    <string name="good">GOOD</string>
+    <string name="great">GREAT</string>
+    <string name="feelawful">I am feeling AWFUL</string>
+    <string name="feelbad">I am feeling BAD</string>
+    <string name="feelok">I am feeling OK</string>
+    <string name="feelgood">I am feeling GOOD</string>
+    <string name="feelgreat">I am feeling GREAT</string>
+    <string name="how">How are you today?</string>
+    <string name="comment">Comments</string>
+    <string name="Enter">Enter comments about your mood.</string>
+    <string name="View">View Check-In Summary</string>
+    <string name="take">Take A Breath</string>
+    <string name="shift">Shift Your Thinking</string>
+    <string name="gratitude">Gratitude</string>
+    <string name="takeasmallstep">Take A Small Step</string>
+    <string name="gethelp">Get Help</string>
+    <string name="Reachafriend">Reach a friend</string>
+    <string name="Goforawalk">Go for a walk</string>
+    <string name="Haveabite">Have a bite</string>
+    <string name="Goforashort">Go for a short walk around the block</string>
+    <string name="Whenyouexercise">When your exercise, it helps to take your mind off things.</string>
+    <string name="Close">Close</string>
+    <string name="Reachout">Reach out to a friend</string>
+    <string name="Feelingsupported">Feeling supported by others can help you ride out through feelings.</string>
+    <string name="Havea">Have a quick bite to eat</string>
+    <string name="Beinghungry">Being hungry can affect your mood.</string>
+    <string name="title_activity_shift_your_thinking">ShiftYourThinking</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="List3things">List 3 things you are grateful for.The more you expand on these items the better.</string>
+    <string name="one">1.</string>
+    <string name="Iamgrateful">I am grateful for...</string>
+    <string name="two">2.</string>
+    <string name="three">3.</string>
+    <string name="save">SAVE</string>
+
 </resources>
