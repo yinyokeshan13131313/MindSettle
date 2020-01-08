@@ -29,45 +29,7 @@ class HomeFragment : Fragment() {
         textViewName.text = username
 
 
-        val radioGroup: RadioGroup = view.findViewById(R.id.radioGroup)
-        val textViewMood: TextView = view.findViewById(R.id.textViewMood)
-        radioGroup.setOnCheckedChangeListener{group, checkedId ->
-            when (view.getId()) {
-                R.id.radioButton4->
-                    if (R.id.radioButton4 == checkedId) {
-                        val imageViewPhoto: ImageView = view.findViewById(R.id.imageViewPhoto)
-                        imageViewPhoto.setImageResource(R.drawable.great);
-                        textViewMood.text = getString(R.string.feelgreat);
-                    }
-                R.id.radioButton5->
-                    if (R.id.radioButton5 == checkedId) {
-                        val imageViewPhoto: ImageView = view.findViewById(R.id.imageViewPhoto)
-                        imageViewPhoto.setImageResource(R.drawable.good);
-                        textViewMood.text = getString(R.string.feelgood);
-                    }
-
-                R.id.radioButton6->
-                    if (R.id.radioButton6 == checkedId) {
-                        val imageViewPhoto: ImageView = view.findViewById(R.id.imageViewPhoto)
-                        imageViewPhoto.setImageResource(R.drawable.ok);
-                        textViewMood.text = getString(R.string.feelok);
-                    }
-
-                R.id.radioButton9->
-                    if(R.id.radioButton9 == checkedId){
-                        val imageViewPhoto: ImageView = view.findViewById(R.id.imageViewPhoto)
-                        imageViewPhoto.setImageResource(R.drawable.bad);
-                        textViewMood.text = getString(R.string.feelbad);
-                    }
-
-                R.id.radioButton10->
-                    if(R.id.radioButton10 == checkedId){
-                        val imageViewPhoto: ImageView = view.findViewById(R.id.imageViewPhoto)
-                        imageViewPhoto.setImageResource(R.drawable.awful);
-                        textViewMood.text = getString(R.string.feelawful)
-                    }
-            }
-        }
+       
         return view
     }
 
