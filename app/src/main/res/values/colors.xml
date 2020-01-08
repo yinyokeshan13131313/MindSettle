@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffcc80</color>
-    <color name="colorPrimaryDark">#ff9800</color>
+    <color name="colorPrimaryDark">#FF9800</color>
     <color name="colorAccent">#fff3e0</color>
     <color name="white">#FFFFFF</color>
+    <color name="tabTextColor">#2d2d2d</color>
+    <color name="tabIndicatorColor">#FFFFFF</color>
+    <color name="datePicker">#cc5200</color>
 </resources>

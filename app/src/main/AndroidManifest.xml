@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".NewGoalActivity"></activity>
+        <activity android:name=".Main2BottomActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".AudioActivity"
             android:label="Take a Breath"
@@ -24,7 +27,6 @@
             android:name=".AudioMaleActivity"
             android:label="Take a Breath"
             android:parentActivityName=".AudioActivity" />
-        <activity android:name=".Main2BottomActivity" />
         <activity
             android:name=".BreathActivity"
             android:label="Take a Breath"
@@ -37,7 +39,6 @@
             android:name=".SignInActivity"
             android:label="@string/signIn"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".HomeActivity"
             android:label="Home"

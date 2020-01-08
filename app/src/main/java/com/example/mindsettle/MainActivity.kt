@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         var token = getSharedPreferences("username", Context.MODE_PRIVATE)
         // Check if UserResponse is Already Logged In
         if(token.getString("loginusername", "") != ""){
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, Main2BottomActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun signIn(){
         //Explicit Intent
-        val intent = Intent (this, Main2BottomActivity::class.java)
+        val intent = Intent (this, SignInActivity::class.java)
 
         //start the second activity with no return value
         startActivity(intent)

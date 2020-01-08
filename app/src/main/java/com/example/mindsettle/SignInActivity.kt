@@ -43,7 +43,7 @@ class SignInActivity: AppCompatActivity()  {
 
                         if(jsonResponse != null){
                             Toast.makeText(this, "Log in successful", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, TestActivity::class.java)
+                            val intent = Intent(this, Main2BottomActivity::class.java)
                             intent.putExtra("username", username)
                             finish()
 

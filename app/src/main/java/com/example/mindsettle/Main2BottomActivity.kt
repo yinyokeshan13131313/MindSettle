@@ -11,22 +11,24 @@ class Main2BottomActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when(item.itemId){
             R.id.home ->{
-                println("home pressed")
+                //println("home pressed")
+                //actionBar.title = "Home"
                 replaceFragment(HomeFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.goals ->{
-                println("goals pressed")
+                //println("goals pressed")
+                //supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, GoalsFragment())
                 replaceFragment(GoalsFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.activities ->{
-                println("activities pressed")
+                //println("activities pressed")
                 replaceFragment(ActivitiesFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile ->{
-                println("profile pressed")
+                //println("profile pressed")
                 replaceFragment(ProfileFragment())
                 return@OnNavigationItemSelectedListener true
             }

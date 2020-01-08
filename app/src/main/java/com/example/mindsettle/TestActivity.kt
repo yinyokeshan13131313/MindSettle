@@ -15,6 +15,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import android.text.TextUtils
 import kotlinx.android.synthetic.main.activity_test.*
+import kotlinx.android.synthetic.main.fragment_goals.*
 import org.json.JSONException
 
 class TestActivity: AppCompatActivity()  {
@@ -22,15 +23,23 @@ class TestActivity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
 
-        var token = getSharedPreferences("username", Context.MODE_PRIVATE)
-        tvSession.text = "Sharepreferences " + token.getString("loginusername", "")
-        var username = token.getString("loginusername", "")
+
+       // var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+        //tvSession.text = "Sharepreferences " + token.getString("loginusername", "")
+        //var username = token.getString("loginusername", "")
 
 
+        //these lines st our adapter
+        val fragmentAdapter = MyPagerAdapter(supportFragmentManager)
+        viewPagerTest.adapter = fragmentAdapter
+
+        //this line view our tablayout with viewpager
+        tabLayoutTest.setupWithViewPager(viewPagerTest)
+
+        /*
         buttonDelete.setOnClickListener {
             deleteUser(username.toString())
-        }
-
+        }*/
 
     }
 

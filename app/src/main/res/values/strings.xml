@@ -16,6 +16,7 @@
     <string name="url_server">https://loxodromic-tactic.000webhostapp.com/api/</string>
     <string name="url_user_read">user/read.php</string>
     <string name="url_user_create">user/create.php</string>
+    <string name="url_user_create_goal">user/create_goal.php</string>
     <string name="url_user_delete">user/delete.php</string>
     <string name="url_user_read_one">user/read_one.php</string>
     <string name="url_user_read_one_sign">user/read_one_sign.php</string>
@@ -25,8 +26,7 @@
     <string name="title_notifications">Notifications</string>
 
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main3">Main3Activity</string>
+    <!--ys-->
+    <string name="learn_more">Learn More</string>
 
 </resources>

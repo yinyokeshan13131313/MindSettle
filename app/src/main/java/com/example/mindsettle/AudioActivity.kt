@@ -10,7 +10,6 @@ class AudioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_audio)
-
         imageFemale.setOnClickListener {
             //Explicit Intent
             val intent = Intent(this, AudioFemaleActivity::class.java)
