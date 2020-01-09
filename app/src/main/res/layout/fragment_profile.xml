@@ -49,17 +49,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewEmail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
+                android:layout_weight="1"
                 android:textColor="@android:color/black"
-                android:textColorHighlight="@android:color/black"
-                android:textColorHint="@android:color/black"
-                android:textColorLink="@android:color/black" />
+                android:textSize="18sp" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -78,12 +75,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextUsername"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewUsername"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:hint="@string/username" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -102,13 +100,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUsername">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextBirthYear"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewBirthYear"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:hint="@string/birthYear"
-                android:inputType="number" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -124,12 +122,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBirthYear">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextCountry"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textViewCountry"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:hint="@string/country" />
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

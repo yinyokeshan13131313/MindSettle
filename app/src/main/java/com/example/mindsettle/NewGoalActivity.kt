@@ -2,7 +2,6 @@ package com.example.mindsettle
 
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,9 +21,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.util.*
 import com.android.volley.Response.Listener
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import kotlinx.android.synthetic.main.dialog_new_goal.view.*
 
 class NewGoalActivity : AppCompatActivity() {
 
@@ -36,7 +33,7 @@ class NewGoalActivity : AppCompatActivity() {
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_goal, null)
         val mBuilder = AlertDialog.Builder(this).setView(mDialogView)
         val mAlertDialog = mBuilder.show()
-        mDialogView.dialogBtnGoal.setOnClickListener{
+        mDialogView.dialogCompleteGoal.setOnClickListener{
             mAlertDialog.dismiss()
         }
 
@@ -58,7 +55,7 @@ class NewGoalActivity : AppCompatActivity() {
             val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_learn_more_goal, null)
             val mBuilder = AlertDialog.Builder(this).setView(mDialogView)
             val mAlertDialog = mBuilder.show()
-            mDialogView.dialogBtnGoal.setOnClickListener{
+            mDialogView.dialogCompleteGoal.setOnClickListener{
                 mAlertDialog.dismiss()
             }
         }
@@ -73,17 +70,9 @@ class NewGoalActivity : AppCompatActivity() {
         }
 
         textViewSelectDate.setOnClickListener {
-            //val now = Calendar.getInstance()
             val dpd = DatePickerDialog(this,R.style.DialogTheme, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 val selectedDate = Calendar.getInstance()
-                //selectedDate.set(Calendar.YEAR,mYear)
-                //selectedDate.set(Calendar.MONTH,mMonth+1)
-                //selectedDate.set(Calendar.DAY_OF_MONTH,mDay)
-                //val date = dateFormat.format(selectedDate.time)
-                //datePass = dateFormat.parse(date)
                 textViewSelectDate.setText("" + mYear + "-" + (mMonth+1) + "-" + mDay)
-                //var dateDialog = DatePickerDialog()
-                //val date = mDay + "-" + (mMonth+1) + "-" + mYear
             }, year, month, day)
             dpd.datePicker.minDate = System.currentTimeMillis() -1000
             //show dialog
@@ -129,12 +118,10 @@ class NewGoalActivity : AppCompatActivity() {
         return errorNum;
     }
 
-
-
     private fun createGoal(usergoal: String, goaldate: String) {
         var token = getSharedPreferences("username", Context.MODE_PRIVATE)
         var username = token.getString("loginusername", "")
-        val url = getString(R.string.url_server) + getString(R.string.url_user_create_goal) + "?username=" + username + "&usergoal=" + usergoal + "&goaldate=" + goaldate
+        val url = getString(R.string.url_server) + getString(R.string.url_user_create_goal) + "?username=" + username + "&usergoal=" + usergoal + "&goaldate=" + goaldate + "&status=active"
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -144,13 +131,13 @@ class NewGoalActivity : AppCompatActivity() {
                         val success: String = response.get("success").toString()
 
                         if (success.equals("1")) {
-                            Toast.makeText(applicationContext, "Record saved", Toast.LENGTH_LONG).show()
-                            //Add record to user list
-                            //userList.add(user)
-                            //Explicit Intent
-                            val intent = Intent(this, Main2BottomActivity::class.java)
-                            //start the second activity. With no return value
-                            startActivity(intent)
+                            val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_new_goal, null)
+                            val mBuilder = AlertDialog.Builder(this).setView(mDialogView)
+                            val mAlertDialog = mBuilder.show()
+                            mDialogView.btnDialogNewGoal.setOnClickListener{
+                                val intent = Intent(this, Main2BottomActivity::class.java)
+                                startActivity(intent)
+                            }
                         } else {
                             Toast.makeText(applicationContext,"Record not saved", Toast.LENGTH_LONG
                             ).show()

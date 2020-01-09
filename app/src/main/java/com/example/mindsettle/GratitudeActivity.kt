@@ -36,6 +36,11 @@ class GratitudeActivity : AppCompatActivity() {
         buttonSaveGratitude.setOnClickListener {
             createGratitude(editTextOne.text.toString(), editTextTwo.text.toString(),editTextThree.text.toString() )
         }
+
+        buttonGratitudeHistory.setOnClickListener {
+            val intent = Intent(this, GratitudeHistoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun createGratitude(gratitudeOne: String, gratitudeTwo: String, gratitudeThree: String) {
@@ -65,11 +70,11 @@ class GratitudeActivity : AppCompatActivity() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Main", "ResponseGoal: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { response ->
-                Log.d("Main", "Response: %s".format(response.message.toString()))
+                Log.d("Main", "ResponseGoal: %s".format(response.message.toString()))
             }
         )
 

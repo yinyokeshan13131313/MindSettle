@@ -12,13 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GetHelpActivity"
-            android:label="Get Help"
-            android:parentActivityName=".Main2BottomActivity"></activity>
-        <activity android:name=".CopingStatementActivity"
-            android:label="Shift Your Thinking"
+        <activity android:name=".GratitudeHistoryActivity"
+            android:label="Gratitude History"
+            android:parentActivityName=".GratitudeActivity">
+        </activity>
+        <activity android:name=".CheckInSummaryActivity"
+            android:label="Check-In Summary"
             android:parentActivityName=".Main2BottomActivity"/>
-        <activity android:name=".EditProfileActivity"
+        <activity
+            android:name=".GetHelpActivity"
+            android:label="Get Help"
+            android:parentActivityName=".Main2BottomActivity" />
+        <activity
+            android:name=".CopingStatementActivity"
+            android:label="Shift Your Thinking"
+            android:parentActivityName=".Main2BottomActivity" />
+        <activity
+            android:name=".EditProfileActivity"
             android:label="Edit Profile"
             android:parentActivityName=".Main2BottomActivity" />
         <activity
@@ -29,7 +39,8 @@
             android:name=".TakeASmallStep"
             android:label="@string/takeasmallstep"
             android:parentActivityName=".Main2BottomActivity" />
-        <activity android:name=".NewGoalActivity"
+        <activity
+            android:name=".NewGoalActivity"
             android:label="New Goal"
             android:parentActivityName=".Main2BottomActivity" />
         <activity

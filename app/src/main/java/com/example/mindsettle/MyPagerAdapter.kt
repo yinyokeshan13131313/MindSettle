@@ -18,7 +18,7 @@ class MyPagerAdapter (fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
         return 2
-        //this method will return 2 tabs
+        //this method will return back_two tabs
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

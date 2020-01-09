@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
-import android.widget.Toast
 import org.json.JSONObject
 import java.net.URL
 
@@ -18,7 +17,7 @@ import java.net.URL
  */
 class FragmentCompleteGoals : Fragment() {
 
-    var dataList = ArrayList<RecordsItem>()
+    var dataList = ArrayList<Goal>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +25,6 @@ class FragmentCompleteGoals : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_fragment_complete_goals, container, false)
-
-        val activity = activity as Main2BottomActivity
-        var token = activity.getSharedPreferences("username", Context.MODE_PRIVATE)
-        var username = token.getString("loginusername", "")
-        val readURL = getString(R.string.url_server) + getString(R.string.url_user_search_goal) + "?username=" + username + "&status=active"
 
         fetchJsonData().execute()
 
@@ -53,21 +47,22 @@ class FragmentCompleteGoals : Fragment() {
         }
         override fun onPostExecute(result: String?){
             super.onPostExecute(result)
-            val jsonObj = JSONObject(result)
-            val recordsArr = jsonObj.getJSONArray("records")
-            for(i in 0 until recordsArr.length()){
-                val singleRecord = recordsArr.getJSONObject(i)
-                val goal = RecordsItem()
-                goal.usergoal = singleRecord.getString("usergoal")
-                goal.goaldate = singleRecord.getString("goaldate")
+            if(result!="") {
+                val jsonObj = JSONObject(result)
+                val recordsArr = jsonObj.getJSONArray("records")
+                for (i in 0 until recordsArr.length()) {
+                    val singleRecord = recordsArr.getJSONObject(i)
+                    val goal = Goal()
+                    goal.usergoal = singleRecord.getString("usergoal")
+                    goal.goaldate = singleRecord.getString("goaldate")
 
-                dataList.add(goal)
+                    dataList.add(goal)
+                }
+                val activity = activity as Main2BottomActivity
+                val listView: ListView = view!!.findViewById(R.id.listViewComplete)
+                val adapter = GoalAdapter(activity, dataList)
+                listView.adapter = adapter
             }
-            val activity = activity as Main2BottomActivity
-            val listView : ListView = view!!.findViewById(R.id.listViewComplete)
-            val adapter = GoalAdapter(activity,dataList)
-            listView.adapter = adapter
-
         }
     }
 

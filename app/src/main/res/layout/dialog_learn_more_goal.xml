@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Think about some things that you would like to be able to do or things that you wnat to change in your life. Consider some goals you would like to work on over the next few weeks or months. Some key areas to set goals include:" />
+        android:text="Think about some things that you would like to be able to do or things that you want to change in your life. Consider some goals you would like to work on over the next few weeks or months. Some key areas to set goals include:" />
 
     <TextView
         android:id="@+id/textView5"
@@ -161,7 +161,7 @@
 
 
     <Button
-        android:id="@+id/dialogBtnGoal"
+        android:id="@+id/dialogCompleteGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"

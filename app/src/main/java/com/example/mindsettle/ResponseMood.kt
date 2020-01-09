@@ -4,13 +4,8 @@ package com.example.mindsettle
 import com.google.gson.annotations.SerializedName
 
 //@Generated("com.robohorse.robopojogenerator")
-data class Goal(
-    @field:SerializedName("usergoal")
-    var usergoal: String? = null,
+data class ResponseMood(
 
-
-    @field:SerializedName("goaldate")
-    var goaldate: String? = null
-
-
+    @field:SerializedName("records")
+    val records: List<Mood?>? = null
 )

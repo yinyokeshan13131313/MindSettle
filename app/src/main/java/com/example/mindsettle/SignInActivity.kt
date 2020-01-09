@@ -22,10 +22,6 @@ class SignInActivity: AppCompatActivity()  {
             JSONProccess1(editTextUsername.text.toString(), editTextPass.text.toString())
         }
 
-        textViewForgot.setOnClickListener {
-            val intent = Intent(this, Main2BottomActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun JSONProccess1(username:String,password:String) {

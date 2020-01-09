@@ -26,7 +26,10 @@
     <string name="url_user_read_one">user/read_one.php</string>
     <string name="url_user_read_one_sign">user/read_one_sign.php</string>
     <string name="url_user_search_goal">user/search_goal.php</string>
+    <string name="url_user_search_mood">user/search_mood.php</string>
+    <string name="url_user_search_gratitude">user/search_gratitude.php</string>
     <string name="url_user_update">user/update.php</string>
+    <string name="url_user_update_goal">user/update_goal.php</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -105,5 +108,7 @@
     <string name="USSMSNumber">741741</string>
     <string name="USPhone">Call the National Suicide Prevention Lifeline:</string>
     <string name="USPhoneNumber">1-800-273-8255</string>
+    <string name="date">Date and Time</string>
+    <string name="mood">Mood</string>
 
 </resources>

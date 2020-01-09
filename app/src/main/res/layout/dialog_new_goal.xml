@@ -13,11 +13,20 @@
         android:padding="15dp">
 
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/good_icon" />
+
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Goal"
+            android:gravity="center"
+            android:text="Great!"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />
 
@@ -26,24 +35,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Setting goals can help you make important changes in your life and help you keep anxiety in check. Start by identifying parts of your life where you'd like to make some changes and then set a realistic and specific goal. Being clear about what you want to do and when you want to do it helps you stay accountable and accomplish your goals." />
+            android:gravity="center"
+            android:text="Good job creating a goal! However, you're not done yet!" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView111"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="For example, if you want to improve your fitness, try setting a goal such as walking for 20 minutes in the morning twice a wee." />
+            android:gravity="center"
+            android:text="Now that you have set a date, try to come up with a plan for accomplishing the goal to increase the chances that you will follow through with it." />
 
         <Button
-            android:id="@+id/dialogCompleteGoal"
+            android:id="@+id/btnDialogNewGoal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="100dp"
             android:background="@drawable/rounded_button_border"
-            android:text="Okay, got it!" />
+            android:text="Okay" />
+
     </LinearLayout>
 
 </ScrollView>

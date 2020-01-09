@@ -82,6 +82,14 @@ class HomeFragment : Fragment() {
                 createMood(userMood, editTextComment.text.toString())
             }
         }
+
+        val buttonViewSummary : Button = view.findViewById(R.id.buttonViewSummary)
+        buttonViewSummary.setOnClickListener {
+            val activity = activity as Main2BottomActivity
+            val intent = Intent(activity, CheckInSummaryActivity::class.java)
+            activity.startActivity(intent)
+        }
+
         return view
     }
 

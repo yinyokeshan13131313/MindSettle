@@ -8,7 +8,8 @@ apply plugin: 'kotlin-android-extensions'
 buildscript {
     repositories {
         jcenter()
-        google()  // new as of Gradle v4.1 (not to be confused the the Android Gradle plugin below)
+        google()
+        // new as of Gradle v4.back_one (not to be confused the the Android Gradle plugin below)
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'

@@ -3,18 +3,20 @@ package com.example.mindsettle
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import org.json.JSONObject
+import java.net.URL
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,6 +39,8 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_profile, container, false)
         val activity = activity as Main2BottomActivity
+        var token = activity.getSharedPreferences("username", Context.MODE_PRIVATE)
+        var username = token.getString("loginusername", "")
         val btn: Button = view.findViewById(R.id.buttonEdit)
         btn.setOnClickListener {
             val intent = Intent(activity, EditProfileActivity::class.java)
@@ -78,6 +82,9 @@ class ProfileFragment : Fragment() {
             }
             val mAlertDialog = mBuilder.show()
         }
+
+        fetchJsonData().execute()
+
         return view
     }
 
@@ -102,11 +109,11 @@ class ProfileFragment : Fragment() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Main", "ResponseGoal: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { response ->
-                Log.d("Main", "Response: %s".format(response.message.toString()))
+                Log.d("Main", "ResponseGoal: %s".format(response.message.toString()))
             }
         )
 
@@ -136,11 +143,11 @@ class ProfileFragment : Fragment() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Main", "ResponseGoal: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { response ->
-                Log.d("Main", "Response: %s".format(response.message.toString()))
+                Log.d("Main", "ResponseGoal: %s".format(response.message.toString()))
             }
         )
 
@@ -171,11 +178,11 @@ class ProfileFragment : Fragment() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Main", "ResponseGoal: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { response ->
-                Log.d("Main", "Response: %s".format(response.message.toString()))
+                Log.d("Main", "ResponseGoal: %s".format(response.message.toString()))
             }
         )
 
@@ -212,11 +219,11 @@ class ProfileFragment : Fragment() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Main", "ResponseGoal: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { response ->
-                Log.d("Main", "Response: %s".format(response.message.toString()))
+                Log.d("Main", "ResponseGoal: %s".format(response.message.toString()))
             }
         )
 
@@ -224,5 +231,48 @@ class ProfileFragment : Fragment() {
         jsonObjectRequest.tag = CreateAccountActivity.TAG
         MySingleton.getInstance(activity).addToRequestQueue(jsonObjectRequest)
     }
+
+    inner class fetchJsonData() : AsyncTask<String, Void, String>(){
+
+        override fun onPreExecute(){
+            super.onPreExecute()
+
+        }
+        override fun doInBackground(vararg params: String?): String? {
+            val activity = activity as Main2BottomActivity
+            var token = activity.getSharedPreferences("username", Context.MODE_PRIVATE)
+            var username = token.getString("loginusername", "")
+            val readURL = getString(R.string.url_server) + getString(R.string.url_user_read_one) + "?username=" + username
+            return URL(readURL).readText(Charsets.UTF_8)
+        }
+        override fun onPostExecute(result: String?){
+            super.onPostExecute(result)
+            if(result!="") {
+                val jsonObj = JSONObject(result)
+                val username = jsonObj.getString("username")
+                val email = jsonObj.getString("email")
+                val birthyear = jsonObj.getString("birthyear")
+                val country = jsonObj.getString("country")
+
+
+
+
+                val activity = activity as Main2BottomActivity
+                val textViewEmail: TextView = view!!.findViewById(R.id.textViewEmail)
+                textViewEmail.text = "Email: " + email.toString()
+
+                val textViewUsername: TextView = view!!.findViewById(R.id.textViewUsername)
+                textViewUsername.text = "Username: " + username.toString()
+
+                val textViewBirthYear: TextView = view!!.findViewById(R.id.textViewBirthYear)
+                textViewBirthYear.text = "Birth Year: " + birthyear.toString()
+
+                val textViewCountry: TextView = view!!.findViewById(R.id.textViewCountry)
+                textViewCountry.text = "Country: " + country.toString()
+            }
+        }
+    }
+
+
 
 }

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 
-class GoalAdapter(private val context: Context,
-                  private val dataSource: ArrayList<Goal>) : BaseAdapter() {
+class MoodAdapter(private val context: Context,
+                  private val dataSource: ArrayList<Mood>) : BaseAdapter() {
 
     private val inflater: LayoutInflater
             = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -18,17 +18,9 @@ class GoalAdapter(private val context: Context,
         return dataSource.size
     }
 
-    //1
+    //2
     override fun getItem(position: Int): Any {
         return dataSource[position]
-    }
-
-    fun getItemGoal(position: Int): String? {
-        return dataSource[position].usergoal
-    }
-
-    fun getItemDate(position: Int): String? {
-        return dataSource[position].goaldate
     }
 
     //3
@@ -39,12 +31,14 @@ class GoalAdapter(private val context: Context,
     //4
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // Get view for row item
-        val rowView = inflater.inflate(R.layout.list_item_goal, parent, false)
-        val titleTextView = rowView.findViewById(R.id.goal_list_title) as TextView
-        val dateTextView = rowView.findViewById(R.id.goal_list_date) as TextView
-        val goal = getItem(position) as Goal
-        titleTextView.text = goal.usergoal
-        dateTextView.text = goal.goaldate
+        val rowView = inflater.inflate(R.layout.list_item_summary, parent, false)
+        val textViewMood = rowView.findViewById(R.id.textViewMood) as TextView
+        val textViewDate = rowView.findViewById(R.id.textViewDate) as TextView
+        val textViewComment = rowView.findViewById(R.id.textViewComment) as TextView
+        val mood = getItem(position) as Mood
+        textViewMood.text = mood.userMood
+        textViewDate.text = mood.dateTime
+        textViewComment.text = mood.comment
 
         rowView.tag = position
         return rowView

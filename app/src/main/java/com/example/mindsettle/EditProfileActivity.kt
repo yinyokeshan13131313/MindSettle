@@ -20,6 +20,11 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
+        var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+        var username = token.getString("loginusername", "")
+
+        editTextUsername.text = "Username: " + username.toString()
+
         buttonEditProfileeee.setOnClickListener {
             var checkValid = showError()
             if(checkValid == 0){
