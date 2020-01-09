@@ -12,6 +12,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
+
         android:theme="@style/textInputLayoutAppearance"
         android:id="@+id/textInputLayoutEmail"
         android:layout_width="match_parent"
@@ -31,7 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/email_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +58,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/password_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirmPass"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/password_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +108,8 @@
             android:id="@+id/editTextUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username" />
+            android:hint="@string/username"
+            android:drawableStart="@drawable/nickname_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -128,7 +133,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/birthYear"
-            android:inputType="number" />
+            android:inputType="number"
+            android:drawableStart="@drawable/birthyear_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -150,7 +156,8 @@
             android:id="@+id/editTextCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/country" />
+            android:hint="@string/country"
+            android:drawableStart="@drawable/country_icon"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

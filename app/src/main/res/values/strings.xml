@@ -25,6 +25,7 @@
     <string name="url_user_delete_mood">user/delete_mood.php</string>
     <string name="url_user_read_one">user/read_one.php</string>
     <string name="url_user_read_one_sign">user/read_one_sign.php</string>
+    <string name="url_user_search_goal">user/search_goal.php</string>
     <string name="url_user_update">user/update.php</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_home">Home</string>
