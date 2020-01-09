@@ -28,12 +28,17 @@ import java.time.format.DateTimeFormatter
 
 class NewGoalActivity : AppCompatActivity() {
 
-    var dateFormat = SimpleDateFormat("yyyy-mm-dd")
-    var datePass = dateFormat.parse("2020-01-01")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_goal)
 
+        //when in show this one
+        val mDialogView = LayoutInflater.from(this).inflate(R.layout.dialog_learn_more_goal, null)
+        val mBuilder = AlertDialog.Builder(this).setView(mDialogView)
+        val mAlertDialog = mBuilder.show()
+        mDialogView.dialogBtnGoal.setOnClickListener{
+            mAlertDialog.dismiss()
+        }
 
 
         //calendar

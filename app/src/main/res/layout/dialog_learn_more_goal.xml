@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp">
+
 
     <TextView
         android:id="@+id/textView6"
@@ -51,6 +60,106 @@
         android:layout_marginTop="15dp"
         android:text='Set goals around taking tme to connect with friends and fill your emotional "wellness bucket" with things you enjoy. Example goal: Make plans with a friend for Friday.' />
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Anxiety Management"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Set goals around practicing strategies and using key tools from the MindSettle app for managing anxiety. Example gosl: Practise calm breathing for 5 minutes a day." />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Stressors"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Set goals for managing stressors in your life related to work, school, friends and family. Example goal: Come up with a study schedule to prepare for final exams." />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Check out these key tips for seting goals:" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="1. Set realistic goals"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Make sure that your goals are realistic and attainable. If you set your goals too high, it will be too difficult to accomplish them and your motivation will suffer." />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="2. Be specific"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="If your goals are specific, it will be easier to know when you've met them. For example, rather than 'exercise more' it's better to set your goals as 'exercise 3 times a week for 20 minutes.'" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="3. Start small"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Making small changes can have  a big impact on your life. Don't try to do everything all at once. Instead, pick 1 or 2 goals to work on at a time." />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text='4. Avoid the "all or nothing" trap'
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="No one completes all of their goals all of the time. Praise yourself for the goals you were able to meet and come ip with a new plan for accomplishing the goals that you weren't." />
+
+
     <Button
         android:id="@+id/dialogBtnGoal"
         android:layout_width="match_parent"
@@ -61,3 +170,5 @@
         android:background="@drawable/rounded_button_border"
         android:text="Okay, got it!" />
 </LinearLayout>
+
+</ScrollView>

@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GratitudeActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="330dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="30dp"
         android:text="@string/List3things"
         android:textColor="@android:color/black"
@@ -31,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="102dp" />
+        app:layout_constraintGuide_begin="62dp" />
 
     <TextView
         android:id="@+id/textViewOne"
@@ -46,14 +50,16 @@
 
     <EditText
         android:id="@+id/editTextOne"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/Iamgrateful"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/editTextTwo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
@@ -69,14 +75,16 @@
 
     <EditText
         android:id="@+id/editTextTwo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/Iamgrateful"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/editTextThree"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <TextView
@@ -92,18 +100,20 @@
 
     <EditText
         android:id="@+id/editTextThree"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/Iamgrateful"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSaveGratitude"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/buttonSave"
+        android:id="@+id/buttonSaveGratitude"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="100dp"
@@ -116,6 +126,24 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/buttonGratitudeHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/rounded_sign_button"
+        android:text="View History"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaveGratitude" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

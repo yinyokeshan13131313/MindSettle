@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CopingStatementActivity">
+
+
+    <TextView
+        android:id="@+id/textViewCoping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/littleReminder"
+        android:textSize="12sp" />
+
+    <com.github.islamkhsh.CardSliderViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:auto_slide_time="3"
+        app:cardSlider_cardCornerRadius="5dp"
+        app:cardSlider_indicator="@id/indicator"
+        app:cardSlider_otherPagesWidth="24dp"
+        app:cardSlider_pageMargin="12dp"
+        app:cardSlider_smallAlphaFactor="0.5"
+        app:cardSlider_smallScaleFactor="0.9" />
+
+
+    <com.github.islamkhsh.CardSliderIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+        app:indicatorsToShow="5" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checkedButton="@id/radioButtonGeneralWorry">
+
+        <RadioButton
+            android:id="@+id/radioButtonGeneralWorry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:text="@string/generalWorry" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSocialAnxiety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:text="@string/socialAnxiety" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPanic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:text="@string/panic" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPhobia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:text="@string/phobias" />
+
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="generalWorryStatement">
+        <item>I can\'t predict the future, so there is no point in guessing.</item>
+        <item>I don\'t have to believe everything I think.</item>
+        <item>Don\'t assume the worst - it usually does\'nt happen.</item>
+        <item>Even if something bad happens, I can handle it.</item>
+        <item>Instead of worrying about problems, I can take action to solve them.</item>
+        <item>When my mind goes to the future, I\'ll bring it back to the present.</item>
+        <item>I can\'t control everything, so there is no need to try so hard.</item>
+        <item>Learning to sit with some uncertainty will help me worry less.</item>
+    </string-array>
+
+    <string-array name="socialAnxietyStatement">
+        <item>I don\'t know what others are thinking, so I need to stop guessing.</item>
+        <item>People are more concerned about themselves than me.</item>
+        <item>I don\'t need to be perfect to be liked.</item>
+        <item>Even if people notice I\'m anxious, it doesn\'t mean they\'ll think less of me.</item>
+        <item>I\'m not responsible for the whole conversation.</item>
+        <item>I don\'t always need to be interesting and entertaining.</item>
+        <item>Not everyone needs to like me. Do I necessarily like everyone I meet?</item>
+        <item>The people who really matter will accept me the way I am.</item>
+    </string-array>
+
+    <string-array name="panicStatement">
+        <item>My body is just reacting to a "false alarm" - there isn\'t any real danger.</item>
+        <item>Panic attacks are uncomfortable, bur nor dangerous.</item>
+        <item>Panic attacks will not make me faint, go crazy, lose control, or die.</item>
+        <item>Others won\'t necessarily be able to tell I\'m having a panic attack.</item>
+        <item>If I have a panic attack, I just need to ride out the wave.</item>
+        <item>Panic attacks won\'t last forever. These feelings will end.</item>
+        <item>When I avoid things because of panic, I\'m feeding my anxiety.</item>
+        <item>Every panic attack is an opportunity to master my anxiety.</item>
+    </string-array>
+
+    <string-array name="phobiaStatement">
+        <item>I don\'t have to assume the worst - it usually doesn\'t happen.</item>
+        <item>I can\'t always trust what anxiety is telling me.</item>
+        <item>Feeling like something is dangerous doesn\'t mean it really is dangerous.</item>
+        <item>Facing the things that scare me is the best way to overcome anxiety.</item>
+        <item>The more I face what I\'m afraid of, the easier it becomes.</item>
+        <item>The cost of avoiding my fear is greater than the risk of facing it.</item>
+        <item>The goal is to do things despite my anxiety.</item>
+        <item>This is manageable, tolerable and survivable.</item>
+    </string-array>
+
+</resources>

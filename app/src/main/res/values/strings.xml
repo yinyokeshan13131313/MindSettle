@@ -17,9 +17,15 @@
     <string name="url_user_read">user/read.php</string>
     <string name="url_user_create">user/create.php</string>
     <string name="url_user_create_goal">user/create_goal.php</string>
+    <string name="url_user_create_mood">user/create_mood.php</string>
+    <string name="url_user_create_gratitude">user/create_gratitude.php</string>
     <string name="url_user_delete">user/delete.php</string>
+    <string name="url_user_delete_goal">user/delete_goal.php</string>
+    <string name="url_user_delete_gratitude">user/delete_gratitude.php</string>
+    <string name="url_user_delete_mood">user/delete_mood.php</string>
     <string name="url_user_read_one">user/read_one.php</string>
     <string name="url_user_read_one_sign">user/read_one_sign.php</string>
+    <string name="url_user_update">user/update.php</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -28,6 +34,7 @@
 
     <!--ys-->
     <string name="learn_more">Learn More</string>
+    <string name="submit">Submit</string>
 
     <!--jh-->
 
@@ -64,11 +71,38 @@
     <string name="title_activity_shift_your_thinking">ShiftYourThinking</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="List3things">List 3 things you are grateful for.The more you expand on these items the better.</string>
+    <string name="List3things">List 3 things you are grateful for. The more you expand on these items the better.</string>
     <string name="one">1.</string>
     <string name="Iamgrateful">I am grateful for...</string>
     <string name="two">2.</string>
     <string name="three">3.</string>
     <string name="save">SAVE</string>
+
+    <!--hoong-->
+    <string name="editProfile">Edit Profile</string>
+    <string name="signOut">Sign Out</string>
+    <string name="deleteAccount">DELETE ACCOUNT</string>
+    <string name="generalWorry">General Worry</string>
+    <string name="socialAnxiety">Social Anxiety</string>
+    <string name="panic">Panic</string>
+    <string name="phobias">Phobias</string>
+    <string name="littleReminder">Little reminder to ease your mind</string>
+    <string name="getHelp">Get Help</string>
+    <string name="takeABreath">Take A Breath</string>
+    <string name="ifInCrisis">If you\'re in crisis:</string>
+    <string name="crisis1"> • Take yourself to the closest hospital or walk-in clinic.</string>
+    <string name="crisis2"> • Contact a trusted friend or family member immediately.</string>
+    <string name="crisis3"> • Get in to see your doctor or counsellor as soon as you can.</string>
+    <string name="crisis4"> • Call your local crisis line.</string>
+    <string name="ifInCanada">If you\'re in Canada:</string>
+    <string name="call911">Call 911</string>
+    <string name="SMS">Text message HELLO to the Crisis Text Line to get in touch with a crisis responder:</string>
+    <string name="canadaSMSNumber">686868</string>
+    <string name="ifInUS">If you\'re in US:</string>
+    <string name="canadaPhone">Call the Canada Suicide Prevention Service:</string>
+    <string name="canadaPhoneNumber">1-833-456-4566</string>
+    <string name="USSMSNumber">741741</string>
+    <string name="USPhone">Call the National Suicide Prevention Lifeline:</string>
+    <string name="USPhoneNumber">1-800-273-8255</string>
 
 </resources>

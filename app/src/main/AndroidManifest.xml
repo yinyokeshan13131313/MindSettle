@@ -12,20 +12,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GratitudeActivity"
-            android:label="Gratitude"
+        <activity android:name=".GetHelpActivity"
+            android:label="Get Help"
             android:parentActivityName=".Main2BottomActivity"></activity>
-        <activity android:name=".TakeASmallStep"
-            android:label="@string/takeasmallstep"
+        <activity android:name=".CopingStatementActivity"
+            android:label="Shift Your Thinking"
             android:parentActivityName=".Main2BottomActivity"/>
-        <activity android:name=".NewGoalActivity" />
+        <activity android:name=".EditProfileActivity"
+            android:label="Edit Profile"
+            android:parentActivityName=".Main2BottomActivity" />
+        <activity
+            android:name=".GratitudeActivity"
+            android:label="Gratitude"
+            android:parentActivityName=".Main2BottomActivity" />
+        <activity
+            android:name=".TakeASmallStep"
+            android:label="@string/takeasmallstep"
+            android:parentActivityName=".Main2BottomActivity" />
+        <activity android:name=".NewGoalActivity"
+            android:label="New Goal"
+            android:parentActivityName=".Main2BottomActivity" />
         <activity
             android:name=".Main2BottomActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.ys" />
         <activity
             android:name=".AudioActivity"
             android:label="Take a Breath"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Main2BottomActivity" />
         <activity
             android:name=".AudioFemaleActivity"
             android:label="Take a Breath"

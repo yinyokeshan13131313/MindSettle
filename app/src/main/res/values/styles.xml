@@ -8,11 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar.ys" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/hintGrey</item>
     </style>
 
     <style name="ErrorText" parent="TextAppearance.AppCompat">
@@ -20,15 +20,15 @@
     </style>
 
     <style name="hintText" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/hintGrey</item>
     </style>
 
     <style name="textInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
         <item name="hintTextAppearance">@style/hintText</item>
         <item name="errorTextAppearance">@style/ErrorText</item>
-        <item name="android:editTextColor">@color/white</item>
-        <item name="android:textColorHint">@color/colorAccent</item>
-        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:editTextColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/hintGrey</item>
+        <item name="colorControlNormal">@android:color/black</item>
     </style>
 
     <!--ys-->
@@ -39,5 +39,17 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <!--hoong-->
+    <style name="textBullet">
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
 </resources>

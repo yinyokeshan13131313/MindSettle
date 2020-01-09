@@ -10,6 +10,28 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Home"
+                    android:textSize="25dp"></TextView>
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
         <ImageView
             android:id="@+id/imageViewPhoto"
             android:layout_width="wrap_content"
@@ -29,7 +51,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.586"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewPhoto">
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPhoto"
+            android:checkedButton="@id/radioButton5">
 
             <RadioButton
                 android:id="@+id/radioButton4"
@@ -112,13 +135,13 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="93dp"
-            android:layout_marginLeft="93dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="233dp"
             android:layout_marginRight="233dp"
             android:text="@string/comment"
-            android:textSize="17sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.432"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,17 +149,19 @@
 
         <EditText
             android:id="@+id/editTextComment"
-            android:layout_width="273dp"
-            android:layout_height="109dp"
-            android:layout_marginStart="97dp"
-            android:layout_marginLeft="97dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="98dp"
-            android:layout_marginRight="98dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/border"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/Enter"
             android:inputType="textMultiLine"
+            android:minHeight="110dp"
             android:shadowColor="#BAFFEB3B"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
@@ -153,10 +178,29 @@
             android:layout_marginEnd="128dp"
             android:layout_marginRight="128dp"
             android:layout_marginBottom="70dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/rounded_sign_button"
             android:shadowColor="@color/colorPrimary"
             android:text="@string/View"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextComment"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/buttonSubmitMood"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/rounded_button_white"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextComment" />

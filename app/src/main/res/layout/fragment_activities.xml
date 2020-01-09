@@ -72,7 +72,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewBreath"
                 android:layout_width="111dp"
                 android:layout_height="109dp"
                 android:layout_marginLeft="50dp"
@@ -82,7 +82,7 @@
                 android:src="@drawable/breath" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageViewShift"
                 android:layout_width="111dp"
                 android:layout_height="109dp"
                 android:layout_marginLeft="30dp"
@@ -97,6 +97,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/textViewBreath"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/colorPrimary"
@@ -106,6 +107,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textViewShift"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="50dp"
                 android:background="@color/colorPrimary"
@@ -207,7 +209,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imageViewHelp"
                 android:layout_width="111dp"
                 android:layout_height="109dp"
                 android:layout_marginLeft="50dp"
@@ -223,6 +225,7 @@
 
 
             <TextView
+                android:id="@+id/textViewHelp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="30dp"
                 android:background="@color/colorPrimary"
